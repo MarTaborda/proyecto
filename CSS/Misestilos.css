@@ -476,7 +476,9 @@ button.prev:hover, button.next:hover {
     border: none;
     transition: all 0.3s ease;
     text-decoration: none;
+    overflow: visible; /* Permite que el tooltip se muestre fuera del botón */
 }
+
 
 /* Hover con efecto moderno */
 .social-buttons a:hover {
@@ -528,26 +530,27 @@ button.prev:hover, button.next:hover {
 .social-buttons a::after {
     content: attr(data-tooltip); /* Obtiene el texto del atributo data-tooltip */
     position:absolute ; /* Posiciona el tooltip en relación con el botón */
-    top: 1px; /* Espacio entre el botón y el tooltip */
-    left: 50%; /* Centra horizontalmente el tooltip */
-    transform: translateX(-50%); /* Ajusta la posición para centrar el tooltip */
+    top: 25%; /* Coloca el tooltip a la mitad del botón */
+    left: 100%; /* Centra horizontalmente el tooltip */
+    transform: translateY(-50%) rotate(45deg); /* Ajusta la posición para centrar el tooltip */
     background-color: rgba(83, 82, 82, 0.85); /* Fondo rojo oscuro */
     color: #fff; /* Texto blanco */
     font-size: 14px; /* Tamaño del texto */
-    padding: 6px 12px; /* Espaciado interno */
+    padding: 5px 10px; /* Espaciado interno */
     border-radius: 4px; /* Bordes redondeados */
     opacity: 0; /* Inicialmente invisible */
     visibility: hidden; /* Oculto por defecto */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Animación de aparición */
     box-shadow: 0 2px 5px rgba(236, 234, 234, 0.2); /* Sombra del tooltip */
     white-space: nowrap; /* Evita que el texto del tooltip se divida en líneas */
+    
 }
 
 /* Mostrar el tooltip al pasar el mouse */
 .social-buttons a:hover::after {
     opacity: 1; /* Hace visible el tooltip */
     visibility: visible; /* Asegura que el tooltip sea visible */
-    transform: translateX(-50%) translateY(0); /* Ajusta la posición al mostrar */
+    transform: translateX(2%) translateY(5%); /* Ajusta la posición al mostrar */
 }
 
 
