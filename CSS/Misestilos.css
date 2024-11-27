@@ -493,6 +493,7 @@ button.prev:hover, button.next:hover {
 /* Facebook estilo */
 .social-buttons a.facebook {
     background: linear-gradient(145deg, #1877f2, #165dc0);
+    animation: parpadear 2s ease-out;
 }
 
 .social-buttons a.facebook:hover i {
@@ -503,6 +504,7 @@ button.prev:hover, button.next:hover {
 /* Instagram estilo */
 .social-buttons a.instagram {
     background: linear-gradient(145deg, #fd1d1d, #833ab4, #fcb045);
+    animation: girar 2s ease-out;
 }
 
 .social-buttons a.instagram:hover i {
@@ -513,6 +515,7 @@ button.prev:hover, button.next:hover {
 /* Whatsapp estilo */
 .social-buttons a.whatsapp {
     background: green;
+    animation: parpadear 2s ease-out;
 }
 
 .social-buttons a.whatsapp:hover i {
@@ -555,22 +558,48 @@ button.prev:hover, button.next:hover {
     position: absolute; /* Superposición del texto */
     top: 10px; /* Ajusta la distancia desde la parte superior */
     left: 70px; /* Ajusta la distancia desde la parte izquierda */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-    color:#833ab4;/* Color del texto */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+    color:#fcb045;/* Color del texto */
     padding: 10px 20px;
     border-radius: 5px;
-    font-size: 1.5rem;
+    font-size: 2rem;/*Aumenté el tamaño de la letra a 2rem. Puedes ajustarlo según sea necesario.*/
     text-align: left; /* Alinea el texto hacia la izquierda */
+    font-weight: bold; /*Texto en negrilla*/
+    animation: parpadear 2s ease-out; /* Aplica la animación */
+
 }
 
 .slider-text2 {
     position: absolute; /* Superposición del texto */
     bottom: 10px; /* Ajusta la distancia desde la parte inferior */
     left: 0px; /* Ajusta la distancia desde la parte izquierda */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
     color: white; /* Color del texto */
     padding: 10px 20px;
     border-radius: 5px;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: left; /* Alinea el texto hacia la izquierda */
+    font-weight: bold; /*Texto en negrilla*/
+    animation: parpadear 2s ease-out; /* Aplica la animación */
+}
+
+@keyframes girar {
+    0% {
+        transform: rotate(0deg); /* Comienza sin rotar */
+    }
+    100% {
+        transform: rotate(360deg); /* Gira 360 grados */
+    }
+}
+
+@keyframes parpadear {
+    0% {
+        opacity: 1; /* El texto es completamente visible */
+    }
+    50% {
+        opacity: 0; /* El texto se oculta (transparente) */
+    }
+    100% {
+        opacity: 1; /* El texto vuelve a ser visible */
+    }
 }
