@@ -1,0 +1,9 @@
+diff a/CSS/Misestilos.css b/CSS/Misestilos.css	(rejected hunks)
+@@ -75,6 +75,7 @@
+     overflow: hidden; /* Oculta contenido que excede los bordes */
+     border: 2px solid black; /* Borde gris claro */
+     border-radius: 10px; /* Esquinas redondeadas */
++    transform: translateX(-50px);
+ }
+ 
+ /* Contenedor de las imágenes del slider */
