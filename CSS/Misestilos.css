@@ -584,6 +584,7 @@ button.prev:hover, button.next:hover {
     text-align: left; /* Alinea el texto hacia la izquierda */
     font-weight: bold; /*Texto en negrilla*/
     animation: parpadear 2s ease-out; /* Aplica la animación */
+    text-align: center;
 }
 
 @keyframes girar {
