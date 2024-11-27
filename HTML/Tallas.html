@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&M Store</Del></title>
+    <link rel="shortcut icon" href="../IMAGENES/PRINCIPALES/1.png">
+    <link rel="StyleSheet" href="../CSS/Misestilos.css">    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!--Se crea los botones de redes sociales-->
+    <div class="social-buttons">
+        <a href="https://facebook.com" target="_blank" class="facebook" data-tooltip="Síguenos en Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/dym102913/profilecard/?igsh=MWd5OTZmdjE2bXZpbQ==" target="_blank" class="instagram" data-tooltip="Síguenos en Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+
+
+    <div class="Contenedor1"><!--Se crea el contenedor para el footer-->
+        <footer class="Prefooter"><!--Se le asigna una clase al footer-->
+            <span class="logo">
+                <a href="../HTML/HomePage.html">
+                <img width="100" height="100" border-radius="500" src="../IMAGENES/PRINCIPALES/1.png">
+                </a>
+            </span>            
+            
+            <nav class="menu">
+                <a href="../HTML/HomePage.html" class="Menu">INICIO</a>
+
+                <div class="submenu-container">
+                    <a href="#" class="Menu">CATEGORÍAS</a>
+                    <ul class="submenu">
+                        <li><a href="../HTML/CATEGORIAS/Dama.html">Dama</a></li>
+                        <li><a href="../HTML/CATEGORIAS/Caballero.html">Caballero</a></li>
+                        <li><a href="../HTML/CATEGORIAS/Niños.html">Niños</a></li>
+                        <li><a href="../HTML/CATEGORIAS/Niñas.html">Niñas</a></li>
+                    </ul>
+                </div>    
+                <a href="../HTML/QuienesSomos.html" class="Menu">¿QUIÉNES SOMOS?</a>
+                <a href="../HTML/Tallas.html" class="Menu">TALLAS</a>
+                <a href="../HTML/Contacto.html" class="Menu">CONTACTO</a>
+            </nav>
+
+            
+
+            <div class="icon-container">
+                <span class="material-icons">shopping_cart</span>
+                <span class="tooltip">Añade tus productos al carrito</span>
+            </div>
+   <!-- Contenedor del icono QR -->
+   <div class="icon-container">
+     <span class="material-icons" id="qr-icon">qr_code_scanner</span>
+     <span class="tooltip">Escanear QR para pago</span>
+  </div>
+
+   <!-- Ventana emergente (modal) -->
+   <div id="qr-modal" class="modal">
+     <div class="modal-content">
+        <span class="close" title="Cerrar la ventana">X</span>
+        <h2>Pagar con QR</h2>
+        <img src="../IMAGENES/PRINCIPALES/2.png" alt="Código QR de pago" class="modal-image">
+        <p>Si tienes un pago pendiente y deseas realizarlo de forma mas rápida, escanea este codigo QR y has tu pago atraves de Nequi.
+            tiene menú contextual</p>
+     </div>
+   </div>
+            
+
+            
+        </footer>
+    </div>
+
+    <h1 class="principal">NUESTRAS TALLAS</h1>
+    <br>
+    
+
+    
+    <script src="../JS/Index.js"></script>
+</body>
+</html>
