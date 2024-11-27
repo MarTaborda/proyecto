@@ -75,11 +75,7 @@ body, html {
     overflow: hidden; /* Oculta contenido que excede los bordes */
     border: 2px solid black; /* Borde gris claro */
     border-radius: 10px; /* Esquinas redondeadas */
-<<<<<<< HEAD
     transform: translateX(-50px);
-=======
-   
->>>>>>> e7899beaf78e86f4a34fc1e707b794b9ee016c24
 }
 
 /* Contenedor de las imágenes del slider */
