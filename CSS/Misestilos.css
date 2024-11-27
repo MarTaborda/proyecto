@@ -75,6 +75,7 @@ body, html {
     overflow: hidden; /* Oculta contenido que excede los bordes */
     border: 2px solid black; /* Borde gris claro */
     border-radius: 10px; /* Esquinas redondeadas */
+    transform: translateX(-50px);
 }
 
 /* Contenedor de las imágenes del slider */
@@ -550,3 +551,26 @@ button.prev:hover, button.next:hover {
 
 
 
+.slider-text {
+    position: absolute; /* Superposición del texto */
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    left: 70px; /* Ajusta la distancia desde la parte izquierda */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    color:#833ab4;/* Color del texto */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    text-align: left; /* Alinea el texto hacia la izquierda */
+}
+
+.slider-text2 {
+    position: absolute; /* Superposición del texto */
+    bottom: 10px; /* Ajusta la distancia desde la parte inferior */
+    left: 0px; /* Ajusta la distancia desde la parte izquierda */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    color: white; /* Color del texto */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    text-align: left; /* Alinea el texto hacia la izquierda */
+}
