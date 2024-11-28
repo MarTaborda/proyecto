@@ -618,9 +618,6 @@ button.prev:hover, button.next:hover {
     width: 100%; /* O un ancho específico */
     height: 200px; /* Altura deseada */
     overflow: hidden; /* Oculta la parte extra de la imagen */
-    
-  
-
 }
 
 .slogan{
