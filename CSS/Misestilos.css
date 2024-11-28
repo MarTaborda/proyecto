@@ -607,3 +607,23 @@ button.prev:hover, button.next:hover {
         opacity: 1; /* El texto vuelve a ser visible */
     }
 }
+.qsomos img{
+    width: 100%;
+    
+    top: -50%;
+    
+}
+
+.qsomos{
+    width: 100%; /* O un ancho específico */
+    height: 200px; /* Altura deseada */
+    overflow: hidden; /* Oculta la parte extra de la imagen */
+    position: relative;
+  
+
+}
+
+.slogan{
+    color: #d3d3d3;
+    text-align: center;
+}
