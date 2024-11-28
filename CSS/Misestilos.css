@@ -678,7 +678,7 @@ button.prev:hover, button.next:hover {
     
 }
 
-<<<<<<< HEAD
+
 /*Tallas*/
 .Contenedor-Tallas{
     background-color: white;
@@ -689,7 +689,7 @@ button.prev:hover, button.next:hover {
     text-align: center;
     
 }
-=======
+
 
 
 .gallery {
@@ -739,4 +739,4 @@ button.prev:hover, button.next:hover {
         button:hover {
             background-color: #0056b3;
         }
->>>>>>> 9dee0e479e58d6c936ae7ebc0a208679bdfb3233
+
