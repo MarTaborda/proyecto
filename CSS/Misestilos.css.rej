@@ -1,0 +1,11 @@
+diff a/CSS/Misestilos.css b/CSS/Misestilos.css	(rejected hunks)
+@@ -618,9 +618,6 @@
+     width: 100%; /* O un ancho específico */
+     height: 200px; /* Altura deseada */
+     overflow: hidden; /* Oculta la parte extra de la imagen */
+-    
+-  
+-
+ }
+ 
+ .slogan{
