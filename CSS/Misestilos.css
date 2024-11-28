@@ -677,3 +677,14 @@ button.prev:hover, button.next:hover {
     
     
 }
+
+/*Tallas*/
+.Contenedor-Tallas{
+    background-color: white;
+    
+}
+
+.Contenedor-Tallas p{
+    text-align: center;
+    
+}
