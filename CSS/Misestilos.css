@@ -609,8 +609,8 @@ button.prev:hover, button.next:hover {
 }
 .qsomos img{
     width: 100%;
+    top: -300px; /* Ajusta este valor para recortar desde arriba */
     
-    top: -50%;
     
 }
 
@@ -618,7 +618,7 @@ button.prev:hover, button.next:hover {
     width: 100%; /* O un ancho específico */
     height: 200px; /* Altura deseada */
     overflow: hidden; /* Oculta la parte extra de la imagen */
-    position: relative;
+    
   
 
 }
