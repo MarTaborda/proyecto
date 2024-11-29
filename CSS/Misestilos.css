@@ -6,7 +6,6 @@ body, html {
     box-sizing: border-box;
     font-family: Arial, sans-serif; /* Define una fuente estándar */
     background-image: url(../IMAGENES/PRINCIPALES/6.png); /* Imagen de fondo de la página */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-size: 100%; /* Ajusta la imagen al 100% del contenedor */
     opacity:inherit;
     
@@ -19,6 +18,7 @@ body, html {
     background-color: #f8f8f8; /* Fondo gris claro */
     padding: 20px 0; /* Espaciado arriba y abajo */
     box-shadow: 5px 5px 5px rgb(22, 22, 22); /* Sombra alrededor del contenedor */
+    position:static
 }
 
 /* Footer layout: Usa flexbox para alinear elementos horizontalmente */
@@ -686,7 +686,7 @@ button.prev:hover, button.next:hover {
 .product img{
     max-width: 100%;
     width: 100%;
-    height: 70%;
+    height: 62%;
 
 }
 
