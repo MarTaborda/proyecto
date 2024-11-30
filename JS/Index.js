@@ -54,3 +54,28 @@
     // Agregar eventos a los botones
     document.querySelector('.next').addEventListener('click', nextImage);
     document.querySelector('.prev').addEventListener('click', prevImage);
+
+
+
+
+    // Selección del botón
+    const backToTopButton = document.getElementById("backToTop");
+
+    // Evento para mostrar/ocultar el botón al hacer scroll
+    window.addEventListener("scroll", () => {
+        console.log("Scroll detectado: ", window.scrollY); // Depuración: imprime el valor de scroll
+        if (window.scrollY > 2) {
+            backToTopButton.style.display = "flex"; // Muestra el botón
+        } else {
+            backToTopButton.style.display = "none"; // Oculta el botón
+        }
+    });
+
+    // Evento para desplazar hacia arriba al hacer clic
+    backToTopButton.addEventListener("click", () => {
+        console.log("Volver arriba clickeado"); // Depuración
+        window.scrollTo({
+            top: 0, // Desplazarse al inicio
+            behavior: "smooth", // Movimiento suave
+        });
+    });

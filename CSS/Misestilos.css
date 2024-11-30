@@ -2,13 +2,13 @@
 /* Establece márgenes y paddings a 0, asegura el box-sizing y aplica una fuente global */
 body, html {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif; /* Define una fuente estándar */
     background-image: url(../IMAGENES/PRINCIPALES/6.png); /* Imagen de fondo de la página */
     background-size: 100%; /* Ajusta la imagen al 100% del contenedor */
     opacity:inherit;
-    
+    padding-top: 80px;
+    height: 2000px;
 }
 
 /* Footer container: Define el fondo, el ancho total y agrega padding */
@@ -18,7 +18,11 @@ body, html {
     background-color: #f8f8f8; /* Fondo gris claro */
     padding: 20px 0; /* Espaciado arriba y abajo */
     box-shadow: 5px 5px 5px rgb(22, 22, 22); /* Sombra alrededor del contenedor */
-    position:static
+    position: fixed; /* Fija el contenedor en la ventana */
+    top: 0; /* Totalmente pegado a la parte superior */
+    padding-top: 20px; /* Mantén un espaciado interno */
+    z-index: 1000; /* Asegura que el contenedor esté encima de otros elementos */
+    
 }
 
 /* Footer layout: Usa flexbox para alinear elementos horizontalmente */
@@ -717,4 +721,32 @@ button:hover {
 }
 h4{
     color: #252424;
+}
+
+
+ /* Botón de "Volver Arriba" */
+ .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff; /* Fondo blanco */
+    color: #f8f3f3; /* Flecha negra */
+    border: 2px solid #000; /* Borde negro */
+    border-radius: 50%; /* Forma circular */
+    width: 50px;
+    height: 50px;
+    font-size: 24px; /* Tamaño de la flecha */
+    cursor: pointer;
+    display: none; /* Oculto inicialmente */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    box-shadow: 0 4px 6px rgba(228, 225, 225, 0.3);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #f0f0f0; /* Fondo más claro al pasar el mouse */
+    transform: scale(1.1); /* Efecto de aumento */
 }
