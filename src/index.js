@@ -6,6 +6,7 @@ const app = express();
 const mysql = require('mysql2');
 // Se puede usar dotenv para cargar variables de entorno desde un archivo .env (actualmente comentado).
 // require('dotenv').config();
+const path = require('path');
 
 // Importa las rutas de los clientes, productos y pedidos desde archivos externos.
 const clienteRoutes = require('./routes/clienteRoutes');
@@ -16,18 +17,28 @@ const pedidoRoutes = require('./routes/pedidoRoutes');
 // Middleware para analizar el cuerpo de las solicitudes JSON.
 app.use(express.json());
 // Middleware para servir archivos estáticos desde el directorio 'pag'.
-app.use(express.static('pag'));
+app.use(express.static('HTML'));
 // Middleware para servir archivos JavaScript desde 'src/js' bajo la ruta '/js'.
-app.use('/js', express.static('src/js'));
+app.use('/CSS', express.static(path.join(__dirname, '../CSS')));
+//app.use('/JS', express.static(path.join(__dirname, 'JS')));
 // Middleware para servir archivos CSS desde 'src/css' bajo la ruta '/css'.
-app.use('/css', express.static('src/css'));
+app.use('/JS', express.static(path.join(__dirname, '../JS')));
+//app.use('/CSS', express.static(path.join(__dirname, 'CSS')));
+app.use('/IMAGENES', express.static(path.join(__dirname, '../IMAGENES')));
+app.use('/HTML', express.static(path.join(__dirname, '../HTML')));
+
+
+// Ruta para servir el archivo HTML principal
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../HMTL/HomePage.html'));
+});
 
 // Configuración de la conexión a la base de datos MySQL.
 const connection = mysql.createConnection({
     host: 'localhost', // Dirección del servidor de la base de datos.
     user: 'root', // Nombre de usuario para conectarse a la base de datos.
-    password: '1234', // Contraseña para el usuario de la base de datos.
-    database: 'proy' // Nombre de la base de datos a la que se va a conectar.
+    password: '12345', // Contraseña para el usuario de la base de datos.
+    database: 'proyecto_dm' // Nombre de la base de datos a la que se va a conectar.
 });
 
 // Establece la conexión con la base de datos.
