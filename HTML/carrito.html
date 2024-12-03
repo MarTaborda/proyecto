@@ -1,0 +1,19 @@
+<div id="cart-container">
+    <h2>Tu Carrito</h2>
+    <div id="cart-items"></div>
+    <div id="shipping">
+      <label for="shipping-area">Selecciona tu barrio:</label>
+      <select id="shipping-area">
+        <option value="" disabled selected>Elige un barrio</option>
+        <option value="Centro" data-cost="5000">Centro - $5000</option>
+        <option value="Norte" data-cost="7000">Norte - $7000</option>
+        <option value="Sur" data-cost="4000">Sur - $4000</option>
+        <option value="Occidente" data-cost="6000">Occidente - $6000</option>
+      </select>
+      <p id="shipping-cost">Costo de envío: $0</p>
+    </div>
+    <div id="total">
+      <h3>Total: $<span id="total-price">0</span></h3>
+    </div>
+    <button id="checkout">Proceder al Pago</button>
+  </div>
