@@ -147,6 +147,95 @@ function renderProducts(productos,categoria) {
     });
 }
 
+
+
+
+
+
+
+function renderizarCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const carritoBody = document.getElementById('carrito-body');
+    const totalSpan = document.getElementById('total');
+    
+    // Limpiar contenido previo
+    carritoBody.innerHTML = '';
+    let total = 0;
+
+    carrito.forEach((item, index) => {
+        const subtotal = item.precio * item.cantidad;
+        total += subtotal;
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.nombre}</td>
+            <td>$${item.precio}</td>
+            <td>
+                <input type="number" class="cantidad" value="${item.cantidad}" min="1" data-index="${index}">
+            </td>
+            <td>${item.talla}</td>
+            <td>$${subtotal.toFixed(2)}</td>
+            <td>
+                <span class="material-icons eliminar" data-index="${index}">delete</span>
+            </td>
+        `;
+        carritoBody.appendChild(row);
+    });
+
+    totalSpan.textContent = total.toFixed(2);
+
+    // Agregar eventos para actualizar cantidades y eliminar productos
+    document.querySelectorAll('.cantidad').forEach(input => {
+        input.addEventListener('change', actualizarCantidad);
+    });
+    document.querySelectorAll('.eliminar').forEach(icon => {
+        icon.addEventListener('click', eliminarProducto);
+    });
+}
+
+function actualizarCantidad(event) {
+    const index = event.target.dataset.index;
+    const nuevaCantidad = parseInt(event.target.value);
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    if (nuevaCantidad > 0) {
+        carrito[index].cantidad = nuevaCantidad;
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        renderizarCarrito();
+    } else {
+        alert("La cantidad debe ser mayor a 0.");
+        renderizarCarrito();
+    }
+}
+
+function eliminarProducto(event) {
+    const index = event.target.dataset.index;
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Eliminar producto del carrito
+    carrito.splice(index, 1);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    renderizarCarrito();
+}
+
+// Renderizar el carrito al cargar la página
+renderizarCarrito();
+
+
+
+
+// Seleccionar el botón del carrito
+const botonCarrito = document.getElementById('ver-carrito');
+
+// Redirigir al carrito al hacer clic
+botonCarrito.addEventListener('click', () => {
+    window.location.href = 'carrito.html';
+});
+
+
+
+
+
 // Función para eliminar un producto
 function eliminarProducto() {
     // Obtiene el valor del campo de entrada con id 'idProducto' y lo almacena en la constante idProducto.
