@@ -5,8 +5,8 @@ const app = express();
 // Importa el módulo mysql2 para conectarse a la base de datos MySQL.
 const mysql = require('mysql2');
 // Se puede usar dotenv para cargar variables de entorno desde un archivo .env (actualmente comentado).
-// require('dotenv').config();
-const path = require('path');
+require('dotenv').config();
+//const path = require('path');
 
 // Importa las rutas de los clientes, productos y pedidos desde archivos externos.
 const clienteRoutes = require('./routes/clienteRoutes');
@@ -19,19 +19,25 @@ app.use(express.json());
 // Middleware para servir archivos estáticos desde el directorio 'pag'.
 app.use(express.static('HTML'));
 // Middleware para servir archivos JavaScript desde 'src/js' bajo la ruta '/js'.
-app.use('/CSS', express.static(path.join(__dirname, '../CSS')));
+/* app.use('/CSS', express.static(path.join(__dirname, '../CSS')));
 //app.use('/JS', express.static(path.join(__dirname, 'JS')));
 // Middleware para servir archivos CSS desde 'src/css' bajo la ruta '/css'.
 app.use('/JS', express.static(path.join(__dirname, '../JS')));
+app.use('/JSS', express.static(path.join(__dirname, '/jss')));
 //app.use('/CSS', express.static(path.join(__dirname, 'CSS')));
 app.use('/IMAGENES', express.static(path.join(__dirname, '../IMAGENES')));
 app.use('/HTML', express.static(path.join(__dirname, '../HTML')));
+ */
+
+app.use('/JS', express.static('src/js'));
+app.use('/CSS', express.static('src/css'));
+app.use('/IMAGENES', express.static('src/IMAGENES'));
 
 
 // Ruta para servir el archivo HTML principal
-app.get('/', (req, res) => {
+/* app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../HMTL/HomePage.html'));
-});
+}); */
 
 // Configuración de la conexión a la base de datos MySQL.
 const connection = mysql.createConnection({

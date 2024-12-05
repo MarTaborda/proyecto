@@ -700,6 +700,8 @@ button.prev:hover, button.next:hover {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    justify-content: space-around;
+    color: white;
 }
 input[type="number"] {
     width: 60px;
@@ -719,8 +721,8 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-h4{
-    color: #252424;
+h3{
+    color: #f1e0e0;
 }
 
 

@@ -76,36 +76,74 @@ function actualizarProducto() {
 }
 
 // Función para buscar un producto
-function buscarProducto() {
-    // Obtiene el valor del campo de entrada con id 'idProducto' y lo almacena en la constante idProducto.
-    const idProducto = document.getElementById('idProducto').value;
+function buscarProducto(categoria) {
+    //busca los productos por categoria para que lo haga de manera dinamica
 
     // Enviar solicitud al servidor usando fetch
     // Se realiza una solicitud GET al servidor para buscar el producto con el ID especificado.
-    fetch(`http://localhost:3000/productos/buscar/${idProducto}`)
+    fetch(`http://localhost:3000/productos/buscar/${categoria}`)
     // Maneja la respuesta del servidor.
     .then(response => response.json()) // Convierte la respuesta en formato JSON.
     .then(data => {
-        // Verifica si se encontraron productos en la respuesta.
-        if (data.length > 0) {
-            // Si se encontró al menos un producto, se toma el primero de la lista.
-            const producto = data[0];
-            
-            // Asigna los valores del producto encontrado a los campos del formulario.
-            document.getElementById('nombre').value = producto.nombre; // Establece el nombre del producto.
-            document.getElementById('descripcion').value = producto.descripcion; // Establece la descripción del producto.
-            document.getElementById('precio').value = producto.precio; // Establece el precio del producto.
-        } else {
-            // Si no se encontraron productos, muestra un mensaje indicando que el producto no fue encontrado.
-            mostrarModal('Producto no encontrado');
-        }
+        //llama la funcion que genera el codigo html de los productos
+        renderProducts(data,categoria);
     })
     // Maneja cualquier error que ocurra durante la solicitud.
     .catch(error => {
         // Imprime el error en la consola para depuración.
         console.error('Error:', error);        
         // Muestra un mensaje de error al usuario indicando que hubo un problema al buscar el producto.
-        mostrarModal('Error al buscar el producto');
+    });
+}
+
+function renderProducts(productos,categoria) {
+    const container = document.getElementById('gallery'); // Asegúrate de tener un contenedor en tu HTML
+    let car_categoria = "";
+
+    //Realiza un switch para que con el id de la categoria genere el nombre de la carpeta
+    switch (categoria) {
+        case 1:
+            car_categoria = "NIÑAS";
+            break; // Asegúrate de usar break para evitar fall-through
+        case 2:
+            car_categoria = "NIÑOS";
+            break; // Asegúrate de usar break para evitar fall-through
+        case 3:
+            car_categoria = "DAMAS";
+            break; // Asegúrate de usar break para evitar fall-through
+        case 4:
+            car_categoria = "CABALLEROS";
+            break; // Asegúrate de usar break para evitar fall-through
+        default:
+            car_categoria = "OTROS"; // Valor por defecto si no coincide con ningún caso
+            break;
+    }
+    productos.forEach(producto => {
+        // Crear el div del producto
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+
+        const imagePath = `/IMAGENES/CATEGORIAS/${car_categoria}/${producto.idproducto}.jpg`;
+        // Crear el contenido del producto
+        productDiv.innerHTML = `
+            <img src="${imagePath}">
+            <h3>${producto.nombre_producto}</h3>
+          <div class="controls">
+            <label for="precio">Precio:</label>
+            <span id="precio-label">${producto.precio}</span> <br>   
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" min="0" value="">
+            <button id="agregar-carrito">Agregar</button>
+            </div>
+            
+            <select id="talla" name="talla">
+                <option value="" disabled selected>Selecciona tu talla</option>
+                <option value="">--</option>)
+            </select>
+        `;
+
+        // Agregar el div del producto al contenedor
+        container.appendChild(productDiv);
     });
 }
 
