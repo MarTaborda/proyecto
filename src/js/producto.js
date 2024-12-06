@@ -2,6 +2,7 @@
 // Este elemento puede ser utilizado más adelante para mostrar mensajes al usuario.
 let mensaje = document.getElementById('mensaje');
 let carrito = [];
+let valorT = 0;
 
 // Función para crear un producto
 function crearProducto() {
@@ -135,7 +136,7 @@ function renderProducts(productos,categoria) {
             <br>
             <br>   
             <label for="cantidad">Cantidad:</label>
-            <input type="number" min="0" value="1" id="cantidad"> <!-- Input para la cantidad -->
+            <input type="number" min="0" value="1" id="cantidad${producto.idproducto}"> <!-- Input para la cantidad -->
             <button id="agregar" onclick="agregarCarrito({ id: '${producto.idproducto}', nombre_producto: '${producto.nombre_producto}', precio: ${producto.precio}})">Agregar al carrito</button>
             </div>
             
@@ -152,7 +153,8 @@ function renderProducts(productos,categoria) {
 
 function agregarCarrito(producto)
 {
-    const cantidad = parseInt(document.getElementById('cantidad').value, 10);
+    let valor = 0;
+    const cantidad = parseInt(document.getElementById('cantidad'+producto.id).value, 10);
     if(isNaN(cantidad) || cantidad <= 0){
         alert("Por favor, ingresar una cantidad valida");
         return;
@@ -164,11 +166,15 @@ function agregarCarrito(producto)
     alert(index);
     if (index != -1){
         carrito[index].cantidad += cantidad;
+        valor += (producto.precio * cantidad);
     }else{
         carrito.push({...producto,cantidad})
+        valor += (producto.precio * cantidad);
     }
+    valorT += valor;
     actualizarContadorCarrito();
     mostrarCarrito();
+    
 }
 
 function mostrarCarrito(){
@@ -181,7 +187,7 @@ function mostrarCarrito(){
             </div>
         `;
     });
-
+    document.getElementById("valorT").innerText = valorT;
     document.getElementById("carritoModal").style.display = 'block';
 }
 
@@ -193,7 +199,20 @@ function actualizarContadorCarrito() {
     const cartCountElement = document.getElementById('cart-count');
     cartCountElement.textContent = cartCount; // Actualiza el texto del contador
 }
+function limpiarCarrito() {
+    carrito = []; // Vaciar el carrito
+    cartCount = 0; // Reiniciar el contador
 
+    // Actualizar el contador en el HTML
+    const cartCountElement = document.getElementById('cart-count');
+    cartCountElement.textContent = cartCount; // Actualiza el texto del contador
+
+    // Opcional: Mostrar un mensaje de confirmación
+    alert("El carrito ha sido limpiado.");
+    
+    // Opcional: Llamar a mostrarCarrito si tienes una función para mostrar el contenido del carrito
+    mostrarCarrito();
+}
 
 
 
