@@ -627,6 +627,10 @@ button.prev:hover, button.next:hover {
     max-width: 70%;
     margin: 0 auto;   
 }
+.contactos {
+    max-width: 70%;
+    margin: 0 auto;   
+}
 
 .grid {
     display: grid;
