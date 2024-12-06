@@ -805,3 +805,84 @@ h3{
 .pagar{
     color: #c41111;
 }
+
+/* Clase para agrupar cada ítem de contacto */
+.contact-item {
+    display: flex; /* Activa Flexbox para alinear elementos en una sola fila. */
+    align-items: center; /* Alinea verticalmente los elementos (ícono y texto) al centro. */
+    margin-bottom: 10px; /* Agrega espacio inferior entre cada ítem de contacto. */
+}
+
+/* Estilo para los íconos dentro de cada ítem de contacto */
+.contact-item span {
+    margin-right: 10px; /* Separa el ícono del texto con un espacio a la derecha. */
+    font-size: 24px; /* Define el tamaño de los íconos para que sean visibles y consistentes. */
+}
+
+/* Estilo para el texto dentro de cada ítem de contacto */
+.contact-item p {
+    margin: 0; /* Elimina márgenes predeterminados del párrafo para una alineación limpia. */
+    font-size: 16px; /* Define un tamaño de fuente adecuado para facilitar la lectura. */
+}
+
+/* Contenedor principal del formulario */
+.form-container {
+    background: #fff; /* Fondo blanco para resaltar el formulario. */
+    padding: 20px; /* Espaciado interno para separar los elementos del borde. */
+    border-radius: 8px; /* Bordes redondeados para un diseño moderno. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad y un efecto flotante. */
+    max-width: 400px; /* Ancho máximo del formulario para mantenerlo compacto. */
+    width: 100%; /* Asegura que el formulario sea responsivo. */
+}
+
+/* Estilo para el título del formulario */
+.form-container h2 {
+    margin-bottom: 20px; /* Espacio inferior para separarlo de los demás elementos. */
+    text-align: center; /* Centra el texto del título. */
+    color: #333; /* Color del texto en un tono gris oscuro para buena legibilidad. */
+}
+
+/* Contenedor de cada grupo de entrada (label + input/textarea) */
+.form-group {
+    margin-bottom: 15px; /* Espaciado inferior entre grupos para separación visual. */
+}
+
+/* Estilo para las etiquetas de los campos */
+.form-group label {
+    display: block; /* Asegura que la etiqueta ocupe toda la línea. */
+    margin-bottom: 5px; /* Espacio entre la etiqueta y el campo. */
+    font-weight: bold; /* Destaca el texto de las etiquetas. */
+}
+
+/* Estilo compartido entre los campos de entrada (input) y el área de texto (textarea) */
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Los campos ocupan todo el ancho disponible del contenedor. */
+    padding: 10px; /* Espaciado interno para que el texto no quede pegado a los bordes. */
+    border: 1px solid #ccc; /* Borde gris claro para un diseño limpio. */
+    border-radius: 4px; /* Bordes redondeados para un aspecto consistente con el contenedor. */
+    font-size: 14px; /* Tamaño de fuente adecuado para facilitar la lectura. */
+}
+
+/* Estilo específico para el área de texto */
+.form-group textarea {
+    resize: none; /* Deshabilita el redimensionamiento manual del área de texto. */
+    height: 100px; /* Altura fija para diferenciarlo de los campos de entrada. */
+}
+
+/* Estilo para el botón de envío */
+.form-group button {
+    width: 100%; /* El botón ocupa todo el ancho disponible. */
+    padding: 10px; /* Espaciado interno para un diseño cómodo y estético. */
+    background-color: #007bff; /* Color de fondo azul para destacar. */
+    border: none; /* Elimina el borde predeterminado del botón. */
+    color: #fff; /* Texto en blanco para buen contraste con el fondo azul. */
+    font-size: 16px; /* Tamaño de fuente que resalta el botón. */
+    cursor: pointer; /* Cambia el cursor a "puntero" para indicar que es clicable. */
+    border-radius: 4px; /* Bordes redondeados para un diseño coherente. */
+}
+
+/* Estilo para el botón cuando se pasa el cursor por encima */
+.form-group button:hover {
+    background-color: #0056b3; /* Fondo azul más oscuro para un efecto visual al hacer hover. */
+}
