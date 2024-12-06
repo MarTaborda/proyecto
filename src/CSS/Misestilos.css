@@ -695,12 +695,7 @@ button.prev:hover, button.next:hover {
 }
 
 .controls {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    justify-content: space-around;
+   
     color: white;
 }
 input[type="number"] {
@@ -792,4 +787,14 @@ h3{
     color: black; /* Color al pasar el mouse */
     text-decoration: none; /* Sin subrayado */
     cursor: pointer; /* Cursor de puntero */
+}
+.cart-count {
+    position: absolute; /* Para posicionarlo sobre el ícono */
+    top: 0; /* Ajusta según sea necesario */
+    right: 0; /* Ajusta según sea necesario */
+    background-color: red; /* Color de fondo */
+    color: white; /* Color del texto */
+    border-radius: 50%; /* Hacerlo circular */
+    padding: 2px 5px; /* Espaciado */
+    font-size: 12px; /* Tamaño de fuente */
 }

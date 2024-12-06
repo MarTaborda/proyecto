@@ -135,7 +135,7 @@ function renderProducts(productos,categoria) {
             <br>
             <br>   
             <label for="cantidad">Cantidad:</label>
-            <input type="number" min="1" value="1" id="cantidad"> <!-- Input para la cantidad -->
+            <input type="number" min="0" value="1" id="cantidad"> <!-- Input para la cantidad -->
             <button id="agregar" onclick="agregarCarrito({ id: '${producto.idproducto}', nombre_producto: '${producto.nombre_producto}', precio: ${producto.precio}})">Agregar al carrito</button>
             </div>
             
@@ -167,6 +167,7 @@ function agregarCarrito(producto)
     }else{
         carrito.push({...producto,cantidad})
     }
+    actualizarContadorCarrito();
     mostrarCarrito();
 }
 
@@ -184,7 +185,14 @@ function mostrarCarrito(){
     document.getElementById("carritoModal").style.display = 'block';
 }
 
-
+function actualizarContadorCarrito() {
+    // Calcula la cantidad total de productos en el carrito
+    cartCount = carrito.reduce((total, item) => total + item.cantidad, 0);
+    
+    // Actualiza el contador en el HTML
+    const cartCountElement = document.getElementById('cart-count');
+    cartCountElement.textContent = cartCount; // Actualiza el texto del contador
+}
 
 
 
