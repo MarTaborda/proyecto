@@ -1,6 +1,7 @@
 // Obtiene el elemento con id 'mensaje' y lo asigna a la variable mensaje.
 // Este elemento puede ser utilizado más adelante para mostrar mensajes al usuario.
 let mensaje = document.getElementById('mensaje');
+let carrito = [];
 
 // Función para crear un producto
 function crearProducto() {
@@ -130,10 +131,12 @@ function renderProducts(productos,categoria) {
             <h3>${producto.nombre_producto}</h3>
           <div class="controls">
             <label for="precio">Precio:</label>
-            <span id="precio-label">${producto.precio}</span> <br>   
+            <span id="precio-label">${producto.precio}</span> <br>
+            <br>
+            <br>   
             <label for="cantidad">Cantidad:</label>
-            <input type="number" id="cantidad" min="0" value="">
-            <button id="agregar-carrito">Agregar</button>
+            <input type="number" min="1" value="1" id="cantidad"> <!-- Input para la cantidad -->
+            <button id="agregar" onclick="agregarCarrito({ id: '${producto.idproducto}', nombre_producto: '${producto.nombre_producto}', precio: ${producto.precio}})">Agregar al carrito</button>
             </div>
             
             <select id="talla" name="talla">
@@ -147,13 +150,46 @@ function renderProducts(productos,categoria) {
     });
 }
 
+function agregarCarrito(producto)
+{
+    const cantidad = parseInt(document.getElementById('cantidad').value, 10);
+    if(isNaN(cantidad) || cantidad <= 0){
+        alert("Por favor, ingresar una cantidad valida");
+        return;
+    }
+
+    const index = carrito.findIndex(item => item.id == producto.id );
+    console.log(producto);
+    console.log(carrito);
+    alert(index);
+    if (index != -1){
+        carrito[index].cantidad += cantidad;
+    }else{
+        carrito.push({...producto,cantidad})
+    }
+    mostrarCarrito();
+}
+
+function mostrarCarrito(){
+    const carritoDiv = document.getElementById("carrito");
+    carritoDiv.innerHTML = '';
+    carrito.forEach(item =>{
+        carritoDiv.innerHTML += `
+            <div>
+                <h5>${item.nombre_producto} - ${item.precio} - ${item.cantidad}</h5>
+            </div>
+        `;
+    });
+
+    document.getElementById("carritoModal").style.display = 'block';
+}
 
 
 
 
 
 
-function renderizarCarrito() {
+/* function renderizarCarrito() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const carritoBody = document.getElementById('carrito-body');
     const totalSpan = document.getElementById('total');
@@ -191,7 +227,7 @@ function renderizarCarrito() {
     document.querySelectorAll('.eliminar').forEach(icon => {
         icon.addEventListener('click', eliminarProducto);
     });
-}
+} */
 
 function actualizarCantidad(event) {
     const index = event.target.dataset.index;
@@ -219,18 +255,18 @@ function eliminarProducto(event) {
 }
 
 // Renderizar el carrito al cargar la página
-renderizarCarrito();
+//renderizarCarrito();
 
 
 
 
 // Seleccionar el botón del carrito
-const botonCarrito = document.getElementById('ver-carrito');
-
+/* const botonCarrito = document.getElementById('ver-carrito');
+ */
 // Redirigir al carrito al hacer clic
-botonCarrito.addEventListener('click', () => {
+/* botonCarrito.addEventListener('click', () => {
     window.location.href = 'carrito.html';
-});
+}); */
 
 
 

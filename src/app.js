@@ -43,7 +43,7 @@ app.use('/IMAGENES', express.static('src/IMAGENES'));
 const connection = mysql.createConnection({
     host: 'localhost', // Dirección del servidor de la base de datos.
     user: 'root', // Nombre de usuario para conectarse a la base de datos.
-    password: '12345', // Contraseña para el usuario de la base de datos.
+    password: '1234', // Contraseña para el usuario de la base de datos.
     database: 'proyecto_dm' // Nombre de la base de datos a la que se va a conectar.
 });
 

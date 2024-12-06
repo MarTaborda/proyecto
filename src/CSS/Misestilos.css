@@ -752,3 +752,44 @@ h3{
     background-color: #f0f0f0; /* Fondo más claro al pasar el mouse */
     transform: scale(1.1); /* Efecto de aumento */
 }
+
+.carritoModal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 1000; /* Por encima de otros elementos */
+    right: 20px; /* A la izquierda */
+    top: 100px; /* Desde la parte superior */
+    width: 40%; /* Ancho del modal */
+    height: 100%; /* Altura completa */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
+    overflow-y: auto; /* Desplazamiento vertical si es necesario */
+    transition: 0.3s; /* Transición suave */
+}
+
+.carrito-content {
+    position: relative;
+    margin: 15% auto;
+    padding: 20px; /* Espaciado interno */
+    background-color: white;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    border: rgb(187, 183, 183);
+    border-style: solid;
+}
+
+.close {
+    color: #4d4c4c; /* Color del botón de cerrar */
+    right: 20px; /* A la derecha */
+    font-size: 28px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    top: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Color al pasar el mouse */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer; /* Cursor de puntero */
+}

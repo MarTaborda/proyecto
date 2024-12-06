@@ -55,7 +55,7 @@
             
 
             <div class="icon-container">
-                <span class="material-icons">shopping_cart</span>
+                <span class="material-icons"onclick="mostrarCarrito() ">shopping_cart</span>
                 <span class="tooltip">Añade tus productos al carrito</span>
             </div>
    <!-- Contenedor del icono QR -->
@@ -84,11 +84,20 @@
     <div class="gallery" id="gallery">
 
     </div>
-
+    <div id="carritoModal" class="carritoModal">
+        <span class="close" onclick="cerrarCarrito()">&times;</span>
+        <div id="carrito-content" class="carrito-content">            
+            <h2>Carrito de Compras</h2>
+            <div id="carrito"></div>
+            <button onclick="enviarCarrito()">Comprar</button>
+        </div>
+    </div>
+   
     <!-- Botón de "Volver Arriba" -->
          <button id="backToTop" class="back-to-top">&#8679;</button>
     
     <script src="/JS/Index.js"></script>
     <script src="/JS/producto.js"></script>
+    <script src="/JS/carrito.js"></script>
 </body>
 </html>
