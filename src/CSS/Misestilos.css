@@ -294,12 +294,13 @@ button.prev:hover, button.next:hover {
 
 /* Botón de cerrar */
 .close {
-    position: absolute;
-    top: 20%;
+    position: relative;
+    top: 80%;
     right: 36%;
-    font-size: 24px;
+    font-size: 67px;
     color: black;
     cursor: pointer;
+    
 }
 
 /* Imagen del QR */

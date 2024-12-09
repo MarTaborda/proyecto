@@ -2,6 +2,9 @@
 const express = require('express');
 // Crea un nuevo enrutador utilizando express.Router().
 const router = express.Router();
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Ruta para crear un nuevo producto
 router.post('/crear', (req, res) => {
@@ -15,7 +18,7 @@ router.post('/crear', (req, res) => {
     req.connection.query(query, [nombre, celular, correo, mensaje], (err, result) => {
         // Manejo de errores: si hay un error en la consulta, lo imprime en la consola y responde con un estado 500.
         if (err) {
-            console.error('Error al crear contacto:', err);
+            console.error('Error al crear contacto:', err.message);
             res.status(500).send('Error al crear contacto');
             return; // Sale de la función si hay un error.
         }
@@ -23,82 +26,4 @@ router.post('/crear', (req, res) => {
         res.send('contacto creado');
     });
 });
-
-// Ruta para actualizar un producto existente
-router.put('/actualizar', (req, res) => {
-    // Desestructura el cuerpo de la solicitud para obtener los detalles del producto a actualizar.
-    const { idProducto, nombre, descripcion, precio } = req.body;
-
-    // Define la consulta SQL para actualizar el producto en la tabla 'producto'.
-    const query = 'UPDATE producto SET nombre = ?, descripcion = ?, precio = ? WHERE idProducto = ?';
-
-    // Ejecuta la consulta en la base de datos utilizando la conexión proporcionada en la solicitud.
-    req.connection.query(query, [nombre, descripcion, precio, idProducto], (err, result) => {
-        // Manejo de errores: si hay un error en la consulta, lo imprime en la consola y responde con un estado 500.
-        if (err) {
-            console.error('Error al actualizar producto:', err);
-            res.status(500).send('Error al actualizar producto');
-            return; // Sale de la función si hay un error.
-        }
-        // Si la consulta se ejecuta correctamente, responde con un mensaje de éxito.
-        res.send('Producto actualizado');
-    });
-});
-
-router.get('/buscar/:id_categoria', (req, res) => {
-    const { id_categoria } = req.params;
-    const query = 'SELECT p.idproducto, p.nombre_producto, p.precio FROM productos p WHERE p.id_categoria=?';
-
-    req.connection.query(query, [id_categoria], (err, result) => {
-        // Manejo de errores: si hay un error en la consulta, lo imprime en la consola y responde con un estado 500.
-        if (err) {
-            console.error('Error al obtener productos:', err);
-            res.status(500).send('Error al obtener productos');
-            return; // Sale de la función si hay un error.
-        }
-        // Si la consulta se ejecuta correctamente, responde con el resultado en formato JSON.
-        res.json(result);
-    });
-});
-
-// Ruta para eliminar un producto por su ID
-router.delete('/eliminar/:idProducto', (req, res) => {
-    // Extrae el ID del producto de los parámetros de la solicitud.
-    const { idProducto } = req.params;
-
-    // Define la consulta SQL para eliminar un producto en la tabla 'producto' por su ID.
-    const query = 'DELETE FROM producto WHERE idProducto = ?';
-
-    // Ejecuta la consulta en la base de datos utilizando la conexión proporcionada en la solicitud.
-    req.connection.query(query, [idProducto], (err, result) => {
-        // Manejo de errores: si hay un error en la consulta, lo imprime en la consola y responde con un estado 500.
-        if (err) {
-            console.error('Error al eliminar producto:', err);
-            res.status(500).send('Error al eliminar producto');
-            return; // Sale de la función si hay un error.
-        }
-        // Si la consulta se ejecuta correctamente, responde con un mensaje de éxito.
-        res.send('Producto eliminado');
-    });
-});
-
-// Ruta para obtener la lista de todos los productos
-router.get('/lista', (req, res) => {
-    // Define la consulta SQL para obtener todos los productos de la tabla 'producto'.
-    const query = 'SELECT idProducto, nombre FROM producto';
-
-    // Ejecuta la consulta en la base de datos utilizando la conexión proporcionada en la solicitud.
-    req.connection.query(query, (err, result) => {
-        // Manejo de errores: si hay un error en la consulta, lo imprime en la consola y responde con un estado 500.
-        if (err) {
-            console.error('Error al obtener productos:', err);
-            res.status(500).send('Error al obtener productos');
-            return; // Sale de la función si hay un error.
-        }
-        // Si la consulta se ejecuta correctamente, responde con el resultado en formato JSON.
-        res.json(result);
-    });
-});
-
-// Exporta el enrutador para ser utilizado en otras partes de la aplicación.
 module.exports = router;
