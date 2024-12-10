@@ -689,7 +689,7 @@ button.prev:hover, button.next:hover {
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #21a7b1f3;
-    
+    text-decoration: none;
     
 }
 .product img{
