@@ -136,13 +136,13 @@ function renderProducts(productos,categoria) {
             <br>
             <br>   
             <label for="cantidad">Cantidad:</label>
-            <input type="number" min="0" value="1" id="cantidad${producto.idproducto}"> <!-- Input para la cantidad -->
+            <input type="number" min="0" value="0" id="cantidad${producto.idproducto}"> <!-- Input para la cantidad -->
             <button id="agregar" onclick="agregarCarrito({ id: '${producto.idproducto}', nombre_producto: '${producto.nombre_producto}', precio: ${producto.precio}})">Agregar al carrito</button>
             </div>
             
             <select id="talla" name="talla">
                 <option value="" disabled selected>Selecciona tu talla</option>
-                <option value="">--</option>)
+                <option value="">cargarTallas()</option>)
             </select>
         `;
 
