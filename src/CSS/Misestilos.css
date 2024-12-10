@@ -688,13 +688,9 @@ button.prev:hover, button.next:hover {
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-<<<<<<< HEAD
-    background-color: #e7f0f852;
+    background-color: #1696c9f5;
     
-=======
-    background-color: #21a7b1f3;
-    text-decoration: none;
->>>>>>> 65b70d1118e2b7ca3ea27c392f303e8c4dc9882d
+
     
 }
 .product img{
