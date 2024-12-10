@@ -45,20 +45,15 @@ router.put('/actualizar', (req, res) => {
     });
 });
 
-// Ruta para buscar un producto por su ID
-router.get('/buscar/:idProducto', (req, res) => {
-    // Extrae el ID del producto de los parámetros de la solicitud.
-    const { idProducto } = req.params;
+router.get('/buscar/:id_categoria', (req, res) => {
+    const { id_categoria } = req.params;
+    const query = 'SELECT p.idproducto, p.nombre_producto, p.precio FROM productos p WHERE p.id_categoria=?';
 
-    // Define la consulta SQL para buscar un producto en la tabla 'producto' por su ID.
-    const query = 'SELECT * FROM producto WHERE idProducto = ?';
-
-    // Ejecuta la consulta en la base de datos utilizando la conexión proporcionada en la solicitud.
-    req.connection.query(query, [idProducto], (err, result) => {
+    req.connection.query(query, [id_categoria], (err, result) => {
         // Manejo de errores: si hay un error en la consulta, lo imprime en la consola y responde con un estado 500.
         if (err) {
-            console.error('Error al buscar producto:', err);
-            res.status(500).send('Error al buscar producto');
+            console.error('Error al obtener productos:', err);
+            res.status(500).send('Error al obtener productos');
             return; // Sale de la función si hay un error.
         }
         // Si la consulta se ejecuta correctamente, responde con el resultado en formato JSON.

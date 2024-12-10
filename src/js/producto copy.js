@@ -142,14 +142,9 @@ function renderProducts(productos,categoria) {
             
             <select id="talla" name="talla">
                 select.innerHTML = <option value="" disabled selected>Selecciona tu talla</option>
-                <option value="" >EUR36</option>
-                <option value="" >EUR37</option>
-                <option value="" >EUR38</option>
+                <option value="" >--</option>
             </select>
-            
         `;
-
-        
 
         // Agregar el div del producto al contenedor
         container.appendChild(productDiv);
