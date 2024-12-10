@@ -688,7 +688,7 @@ button.prev:hover, button.next:hover {
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #21a7b1f3;
+    background-color: #e7f0f852;
     
     
 }
@@ -889,42 +889,3 @@ h3{
 }
 
 
-
-
-/* Estilo para la alerta personalizada */
-.alert {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #4CAF50; /* Verde */
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: 300px;
-    font-size: 18px;
-    display: none; /* Inicialmente oculta */
-    z-index: 1000;
-}
-
-.alert button {
-    background-color: white;
-    color: #4CAF50;
-    border: none;
-    padding: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.alert button:hover {
-    background-color: #45a049;
-    color: white;
-}
-
-.hidden {
-    display: none; /* Clase para ocultar el div */
-}
