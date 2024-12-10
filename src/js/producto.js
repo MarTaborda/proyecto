@@ -153,6 +153,7 @@ function renderProducts(productos,categoria) {
 
 function agregarCarrito(producto)
 {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
     let valor = 0;
     const cantidad = parseInt(document.getElementById('cantidad'+producto.id).value, 10);
     if(isNaN(cantidad) || cantidad <= 0){
@@ -178,6 +179,7 @@ function agregarCarrito(producto)
 }
 
 function mostrarCarrito(){
+    localStorage.setItem('carrito', JSON.stringify(carrito));
     const carritoDiv = document.getElementById("carrito");
     carritoDiv.innerHTML = '';
     carrito.forEach(item =>{
@@ -193,6 +195,7 @@ function mostrarCarrito(){
 
 function actualizarContadorCarrito() {
     // Calcula la cantidad total de productos en el carrito
+    localStorage.setItem('carrito', JSON.stringify(carrito));
     cartCount = carrito.reduce((total, item) => total + item.cantidad, 0);
     
     // Actualiza el contador en el HTML
@@ -213,6 +216,7 @@ function limpiarCarrito() {
     // Opcional: Llamar a mostrarCarrito si tienes una función para mostrar el contenido del carrito
     mostrarCarrito();
 }
+
 
 
 
