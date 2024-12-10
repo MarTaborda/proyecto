@@ -79,3 +79,9 @@
             behavior: "smooth", // Movimiento suave
         });
     });
+
+
+    document.getElementById('formulario').addEventListener('submit', function(e) {
+        e.preventDefault();  // Prevenir el envío del formulario
+        crearContacto();     // Llamar a la función
+    });

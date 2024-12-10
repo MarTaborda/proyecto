@@ -1,10 +1,22 @@
 // Función para crear un pedido
 function crearContacto() {
+    console.log('La función crearContacto() está siendo llamada'); 
     // Obtiene el valor del cliente ingresados en el formulario
-    let nombre = document.getElementById('nombre').value;
-    let celular = document.getElementById('celular').value;
-    let correo = document.getElementById('correo').value;
-    let mensaje = document.getElementById('mensaje').value;
+    let nombre = document.getElementById('nombre').value.trim();
+    let celular = document.getElementById('celular').value.trim();
+    let correo = document.getElementById('correo').value.trim();
+    let mensaje = document.getElementById('mensaje').value.trim();
+
+    console.log('Nombre:', nombre); // Agrega logs para depuración
+    console.log('Celular:', celular);
+    console.log('Correo:', correo);
+    console.log('Mensaje:', mensaje);
+
+      // Validación: verifica que los campos no estén vacíos
+      if (!nombre || !celular || !correo || !mensaje) {
+        mostrarModal('Todos los campos son obligatorios.');
+        return;
+    }
 
     // Realiza una solicitud HTTP POST a la URL especificada para crear un nuevo pedido.
     fetch('http://localhost:3000/contacto/crear', {
