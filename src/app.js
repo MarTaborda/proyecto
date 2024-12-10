@@ -13,6 +13,7 @@ const clienteRoutes = require('./routes/clienteRoutes');
 const productoRoutes = require('./routes/productoRoutes');
 const pedidoRoutes = require('./routes/pedidoRoutes');
 const contactoRoutes = require('./routes/contactoRoutes');
+const tallasRoutes = require('./routes/tallasRoutes');
 
 // Middleware: intercambiador de información 
 // Middleware para analizar el cuerpo de las solicitudes JSON.
@@ -70,6 +71,7 @@ app.use('/clientes', clienteRoutes); // Rutas para manejar clientes.
 app.use('/productos', productoRoutes); // Rutas para manejar productos.
 app.use('/pedidos', pedidoRoutes); // Rutas para manejar pedidos.
 app.use('/contacto', contactoRoutes); // Rutas para manejar contactos.
+app.use('/tallas', tallasRoutes); // Rutas para manejar contactos.
 
 // Establece el puerto en el que el servidor escuchará. Usa la variable de entorno PORT si está definida, o 3000 por defecto.
 const port = process.env.PORT || 3000;
