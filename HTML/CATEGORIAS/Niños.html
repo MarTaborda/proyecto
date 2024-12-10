@@ -54,7 +54,8 @@
             
 
             <div class="icon-container">
-                <span class="material-icons">shopping_cart</span>
+                <span class="material-icons" onclick="mostrarCarrito()">shopping_cart</span>
+                <span id="cart-count" class="cart-count">0</span> <!-- Contador de productos -->
                 <span class="tooltip">Añade tus productos al carrito</span>
             </div>
    <!-- Contenedor del icono QR -->
@@ -80,193 +81,15 @@
     </div>
     <h1 class="principal">NIÑOS</h1><br>
     
-    <div class="gallery">
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/16.jpg">
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/17.jpg">
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/18.jpg">
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/19.jpg" >
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/20.jpg">
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/21.jpg">
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/22.jpg">
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/23.jpg">
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/24.jpg">
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/25.jpg">
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/26.jpg">
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/27.jpg">
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/28.jpg">
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/29.jpg">
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-        <div class="product">
-            <img src="/IMAGENES/CATEGORIAS/NIÑOS/30.jpg">
-            <h4>Descripción del Producto 1</h4>
-            <div class="controls">
-                <input type="number" min="0" value="0">
-                <button>Agregar al carrito</button>
-            </div>
-            <br>
-            <select id="talla" name="talla">
-                <option value="" disabled selected>Selecciona tu talla</option>
-            </select>
-        </div>
-                      
+    <div class="gallery" id="gallery">
+
     </div>
 
     
 
     
     <script src="/JS/Index.js"></script>
+    <script src="/JS/producto.js"></script>
+    <script src="/JS/carrito.js"></script>
 </body>
 </html>

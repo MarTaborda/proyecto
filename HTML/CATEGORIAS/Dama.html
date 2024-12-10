@@ -54,7 +54,8 @@
             
 
             <div class="icon-container">
-                <span class="material-icons">shopping_cart</span>
+                <span class="material-icons" onclick="mostrarCarrito()">shopping_cart</span>
+                <span id="cart-count" class="cart-count">0</span> <!-- Contador de productos -->
                 <span class="tooltip">Añade tus productos al carrito</span>
             </div>
    <!-- Contenedor del icono QR -->
@@ -80,6 +81,17 @@
     </div>
     <h1 class="principal">DAMAS</h1><br>
     
+    <div id="carritoModal" class="carritoModal">
+        <span class="close" onclick="cerrarCarrito()">&times;</span>
+        <div id="carrito-content" class="carrito-content">            
+            <h2>Carrito de Compras</h2>
+            <div id="carrito"></div>
+            <h2 class="pagar">Valor total a pagar: </h2><h2 class="pagar" id="valorT"></h2>
+            <button onclick="enviarCarrito()">Comprar</button>
+            <button id="clear-cart" onclick="limpiarCarrito()">Limpiar Carrito</button>
+        </div>
+    </div>
+    
     <div class="gallery"  id="gallery">
        
     </div>
@@ -87,5 +99,6 @@
     
     <script src="/JS/Index.js"></script>
     <script src="/JS/producto.js"></script>
+    <script src="/JS/carrito.js"></script>
 </body>
 </html>
