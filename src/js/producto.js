@@ -142,23 +142,11 @@ function renderProducts(productos,categoria) {
             
             <select id="talla" name="talla">
                 select.innerHTML = <option value="" disabled selected>Selecciona tu talla</option>
-                <option value="" >EUR28</option>
-                <option value="" >EUR29</option>
-                <option value="" >EUR30</option>
-                <option value="" >EUR31</option>
-                <option value="" >EUR32</option>
-                <option value="" >EUR33</option>
-                <option value="" >EUR34</option>
-                <option value="" >EUR35</option>
                 <option value="" >EUR36</option>
                 <option value="" >EUR37</option>
                 <option value="" >EUR38</option>
                 <option value="" >EUR39</option>
-                <option value="" >EUR40</option>
-                <option value="" >EUR41</option>
-                <option value="" >EUR42</option>
-                <option value="" >EUR43</option>
-                <option value="" >EUR44</option>
+                
             </select>
             
         `;
