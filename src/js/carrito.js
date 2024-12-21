@@ -1,3 +1,5 @@
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
 function abrirCarrito() {
     document.getElementById('carritoModal').style.display = 'block';
 }
